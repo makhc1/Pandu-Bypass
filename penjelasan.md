@@ -1,1 +1,0 @@
-jadi ini tuh API Bypass buat link executor delta di roblox, executor delta di roblox itu ada sistem key yang luamayn ribet diselesaiin, jadi api ini itu membypass nya, api ini bisa dintegrasikan ke beberapa platform seperti website dan bot discord
