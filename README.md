@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pandu Bypass API
 
-## Getting Started
+The developer API for bypassing the Delta Executor key system in Roblox. Built for high volume, direct protocol-level token resolution, and seamless integration into Discord bots and websites.
 
-First, run the development server:
+![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC?style=for-the-badge&logo=tailwind-css)
+![GSAP](https://img.shields.io/badge/GSAP-Animated-88CE02?style=for-the-badge&logo=greensock)
+
+---
+
+## ⚡ Key Features
+
+- **~7-10s Global Latency:** Our routed request pool minimizes TTFB. Links are solved instantly through optimized HTTP pathways, completely bypassing slow headless browsers.
+- **24-Hour Lifecycle:** Tokens aren't generated on the fly. They are locked and valid for a full 24 hours.
+- **Rate Limit Handling:** Automatic backoff and retry logic handles vendor rate limits silently.
+- **Native SDKs:** Official support for Node.js, Python, and Luau (Roblox).
+- **Bilingual Interface:** Includes a built-in dictionary for full English (EN) and Indonesian (ID) localization.
+
+## 🛠 Tech Stack
+
+- **Framework:** [Next.js 15](https://nextjs.org/) (App Router)
+- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
+- **Animations:** [GSAP](https://gsap.com/) & ScrollTrigger
+- **Smooth Scrolling:** [Lenis](https://lenis.studiofreight.com/)
+- **Icons:** Lucide React & Custom Brand SVGs
+
+## 🚀 Getting Started
+
+To run the development server locally:
 
 ```bash
+# Install dependencies
+npm install
+
+# Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📖 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/app/page.tsx` - The main GSAP-animated landing page with localization and bento grid features.
+- `src/app/docs/page.tsx` - The complete interactive API reference documentation clone.
+- `src/app/globals.css` - Custom styling rules, variables, and Tailwind overrides for the documentation layout.
 
-## Learn More
+## 📝 License
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+&copy; 2026 Pandu Bypass. All rights reserved.
