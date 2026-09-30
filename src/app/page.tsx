@@ -175,7 +175,7 @@ export default function LandingPage() {
                 
                 <h1 
                   className="gsap-hero-el font-extrabold tracking-[-0.05em] text-white leading-[0.92] mb-6"
-                  style={{ fontSize: "clamp(3.5rem, 12vw, 7rem)" }}
+                  style={{ fontSize: "clamp(3rem, 11vw, 6.2rem)" }}
                 >
                   {t.title1}<br />
                   <span className="text-zinc-600">{t.title2}</span>
@@ -203,7 +203,7 @@ export default function LandingPage() {
               </div>
 
               {/* Right Column - Premium Code Window Overlap */}
-              <div className="relative w-full h-[400px] lg:h-auto lg:aspect-square max-w-[600px] mx-auto lg:ml-auto mt-8 lg:mt-0">
+              <div className="relative w-full h-[400px] lg:h-auto lg:aspect-square max-w-[600px] mx-auto lg:ml-auto mt-8 lg:mt-10">
                 {/* Main Code Editor */}
                 <div className="gsap-hero-code absolute right-0 top-0 w-full lg:w-[110%] rounded-2xl border border-white/10 bg-[#0A0A0A]/80 backdrop-blur-xl shadow-2xl overflow-hidden z-10 transform transition-transform hover:-translate-y-1 duration-500">
                   <div className="flex items-center gap-2 border-b border-white/5 bg-white/[0.02] px-4 py-3">
