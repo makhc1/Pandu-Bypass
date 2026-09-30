@@ -1,7 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import Lenis from "lenis";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<Record<string, string>>({
@@ -11,8 +16,26 @@ export default function Home() {
 
   const [activeSection, setActiveSection] = useState("overview");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
+  const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
+    // Lenis smooth scrolling setup
+    const lenis = new Lenis({
+      lerp: 0.1,
+      smoothWheel: true,
+    });
+    lenisRef.current = lenis;
+
+    lenis.on('scroll', ScrollTrigger.update);
+    
+    const updateLenis = (time: number) => {
+      lenis.raf(time * 1000);
+    };
+    gsap.ticker.add(updateLenis);
+    gsap.ticker.lagSmoothing(0);
+
+    // Spy on sections
     const spies = document.querySelectorAll('.spy');
     if ('IntersectionObserver' in window) {
       const obs = new IntersectionObserver((es) => {
@@ -24,6 +47,31 @@ export default function Home() {
       }, { rootMargin: '-42% 0px -52% 0px', threshold: 0 });
       spies.forEach(s => obs.observe(s));
     }
+
+    // GSAP Scroll Animations
+    const sections = gsap.utils.toArray('.spy') as HTMLElement[];
+    sections.forEach(sec => {
+      gsap.fromTo(sec, 
+        { opacity: 0, y: 30 },
+        { 
+          opacity: 1, 
+          y: 0, 
+          duration: 0.8, 
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: sec,
+            start: 'top 85%',
+            toggleActions: 'play none none reverse'
+          }
+        }
+      );
+    });
+
+    return () => {
+      lenis.destroy();
+      gsap.ticker.remove(updateLenis);
+      ScrollTrigger.getAll().forEach(t => t.kill());
+    };
   }, []);
 
   const handleCopy = async (text: string, e: React.MouseEvent<HTMLButtonElement>) => {
@@ -49,9 +97,19 @@ export default function Home() {
     { id: "notes", label: "Notes" },
   ];
 
-  const handleNavClick = (id: string) => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
     setActiveSection(id);
     setIsMobileMenuOpen(false);
+    
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(`#${id}`, { offset: -30 });
+    } else {
+      const target = document.getElementById(id);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   };
 
   return (
@@ -63,7 +121,7 @@ export default function Home() {
       <nav className="nav">
        <div className="nlabel">Guide</div>
        {navLinks.map(link => (
-         <a key={link.id} className={`navlink ${activeSection === link.id ? 'active' : ''}`} href={`#${link.id}`} onClick={() => handleNavClick(link.id)}><span className="nd"></span>{link.label}</a>
+         <a key={link.id} className={`navlink ${activeSection === link.id ? 'active' : ''}`} href={`#${link.id}`} onClick={(e) => handleNavClick(e, link.id)}><span className="nd"></span>{link.label}</a>
        ))}
       </nav>
       <div className="sfoot"><span className="stat"><span className="live"></span>API operational</span><br/>Pandu Bypass</div>
@@ -231,4 +289,3 @@ export default function Home() {
     </div>
   );
 }
-
