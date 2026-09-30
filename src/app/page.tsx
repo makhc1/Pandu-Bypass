@@ -215,7 +215,7 @@ export default function LandingPage() {
                     <span className="ml-2 flex-1 text-center text-[10px] font-medium tracking-widest text-zinc-500 uppercase">request.ts</span>
                   </div>
                   <div className="p-4 sm:p-6 text-[11px] sm:text-[13px] font-mono leading-loose text-zinc-400 overflow-x-auto">
-                    <span className="text-violet-400">const</span> response = <span className="text-violet-400">await</span> fetch(<span className="text-zinc-100">"https://api.pandu.com/v1"</span>, {`{`}<br/>
+                    <span className="text-violet-400">const</span> response = <span className="text-violet-400">await</span> fetch(<span className="text-zinc-100">"https://bypass.panduhub.com/bypass"</span>, {`{`}<br/>
                     &nbsp;&nbsp;method: <span className="text-zinc-100">"POST"</span>,<br/>
                     &nbsp;&nbsp;headers: {`{`}<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-zinc-100">"x-api-key"</span>: <span className="text-zinc-100">"pk_live_..."</span><br/>

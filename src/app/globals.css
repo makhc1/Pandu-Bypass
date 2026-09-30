@@ -132,6 +132,8 @@ pre{font-family:var(--mono);background:var(--well);border:1px solid var(--border
 .tab:hover{color:var(--text)}
 .tab.active{color:var(--jade);border-bottom-color:var(--jade)}
 .tab:focus-visible{outline:2px solid var(--jade);outline-offset:-4px;border-radius:6px}
+.tabpane{display:none}
+.tabpane.active{display:block}
 
 .notes{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
 .notes li{display:flex;gap:12px;font-size:14px;color:#CFCFD6}

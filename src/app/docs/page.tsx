@@ -87,8 +87,8 @@ export default function Home() {
        </div>
        <div className="endpoint">
         <div className="methods"><span className="m get">GET</span><span className="m post">POST</span></div>
-        <div className="url"><span className="p">https://api.example.com</span>/v1/bypass</div>
-        <button className="copy" onClick={(e) => handleCopy("https://api.example.com/v1/bypass", e)}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg>Copy</button>
+        <div className="url"><span className="p">https://bypass.panduhub.com</span>/bypass</div>
+        <button className="copy" onClick={(e) => handleCopy("https://bypass.panduhub.com/bypass", e)}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg>Copy</button>
        </div>
       </header>
    
@@ -179,35 +179,35 @@ export default function Home() {
          <div className={`tabpane ${activeTab.req === 'curl' ? 'active' : ''}`}>
           <div className="codebox">
            <div className="cbtop"><span className="cbtag">query param</span></div>
-           <button className="copy" onClick={(e) => handleCopy('curl "https://api.example.com/v1/bypass?key=YOUR_KEY&url=TARGET_LINK"', e)}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg>Copy</button>
-           <pre>curl "https://api.example.com/v1/bypass?key=YOUR_KEY&amp;url=TARGET_LINK"</pre>
+           <button className="copy" onClick={(e) => handleCopy('curl "https://bypass.panduhub.com/bypass?key=YOUR_KEY&url=TARGET_LINK"', e)}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg>Copy</button>
+           <pre>curl "https://bypass.panduhub.com/bypass?key=YOUR_KEY&amp;url=TARGET_LINK"</pre>
           </div>
           <div className="codebox">
            <div className="cbtop"><span className="cbtag">header auth</span></div>
-           <button className="copy" onClick={(e) => handleCopy('curl -H "x-api-key: YOUR_KEY" \\\n  "https://api.example.com/v1/bypass?url=TARGET_LINK"', e)}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg>Copy</button>
-           <pre>curl -H "x-api-key: YOUR_KEY" \{`\n`}  "https://api.example.com/v1/bypass?url=TARGET_LINK"</pre>
+           <button className="copy" onClick={(e) => handleCopy('curl -H "x-api-key: YOUR_KEY" \\\n  "https://bypass.panduhub.com/bypass?url=TARGET_LINK"', e)}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg>Copy</button>
+           <pre>curl -H "x-api-key: YOUR_KEY" \{`\n`}  "https://bypass.panduhub.com/bypass?url=TARGET_LINK"</pre>
           </div>
          </div>
          
          <div className={`tabpane ${activeTab.req === 'python' ? 'active' : ''}`}>
           <div className="codebox">
-           <button className="copy" onClick={(e) => handleCopy('import requests\n\nr = requests.get("https://api.example.com/v1/bypass",\n    params={"url": TARGET_LINK},\n    headers={"x-api-key": "YOUR_KEY"},\n    timeout=90).json()\n\nprint(r["key"])', e)}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg>Copy</button>
-           <pre><span className="tk">import</span> requests{`\n\n`}r = requests.get(<span className="ts">"https://api.example.com/v1/bypass"</span>,{`\n`}    params={`{`}<span className="ts">"url"</span>: TARGET_LINK{`}`},{`\n`}    headers={`{`}<span className="ts">"x-api-key"</span>: <span className="ts">"YOUR_KEY"</span>{`}`},{`\n`}    timeout=<span className="tn">90</span>).json(){`\n\n`}<span className="tk">print</span>(r[<span className="ts">"key"</span>])</pre>
+           <button className="copy" onClick={(e) => handleCopy('import requests\n\nr = requests.get("https://bypass.panduhub.com/bypass",\n    params={"url": TARGET_LINK},\n    headers={"x-api-key": "YOUR_KEY"},\n    timeout=90).json()\n\nprint(r["key"])', e)}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg>Copy</button>
+           <pre><span className="tk">import</span> requests{`\n\n`}r = requests.get(<span className="ts">"https://bypass.panduhub.com/bypass"</span>,{`\n`}    params={`{`}<span className="ts">"url"</span>: TARGET_LINK{`}`},{`\n`}    headers={`{`}<span className="ts">"x-api-key"</span>: <span className="ts">"YOUR_KEY"</span>{`}`},{`\n`}    timeout=<span className="tn">90</span>).json(){`\n\n`}<span className="tk">print</span>(r[<span className="ts">"key"</span>])</pre>
           </div>
          </div>
          
          <div className={`tabpane ${activeTab.req === 'node' ? 'active' : ''}`}>
           <div className="codebox">
-           <button className="copy" onClick={(e) => handleCopy('const r = await fetch(\n  "https://api.example.com/v1/bypass?url=" + encodeURIComponent(link),\n  { headers: { "x-api-key": "YOUR_KEY" } }\n).then(x => x.json());\n\nconsole.log(r.key);', e)}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg>Copy</button>
-           <pre><span className="tk">const</span> r = <span className="tk">await</span> fetch({`\n`}  <span className="ts">"https://api.example.com/v1/bypass?url="</span> + encodeURIComponent(link),{`\n`}  {`{`} headers: {`{`} <span className="ts">"x-api-key"</span>: <span className="ts">"YOUR_KEY"</span> {`}`} {`}`}{`\n`}).then(x =&gt; x.json());{`\n\n`}console.log(r.key);</pre>
+           <button className="copy" onClick={(e) => handleCopy('const r = await fetch(\n  "https://bypass.panduhub.com/bypass?url=" + encodeURIComponent(link),\n  { headers: { "x-api-key": "YOUR_KEY" } }\n).then(x => x.json());\n\nconsole.log(r.key);', e)}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg>Copy</button>
+           <pre><span className="tk">const</span> r = <span className="tk">await</span> fetch({`\n`}  <span className="ts">"https://bypass.panduhub.com/bypass?url="</span> + encodeURIComponent(link),{`\n`}  {`{`} headers: {`{`} <span className="ts">"x-api-key"</span>: <span className="ts">"YOUR_KEY"</span> {`}`} {`}`}{`\n`}).then(x =&gt; x.json());{`\n\n`}console.log(r.key);</pre>
           </div>
          </div>
          
          <div className={`tabpane ${activeTab.req === 'luau' ? 'active' : ''}`}>
           <div className="codebox">
            <div className="cbtop"><span className="cbtag">in-game</span></div>
-           <button className="copy" onClick={(e) => handleCopy('local Http = game:GetService("HttpService")\nlocal url = "https://api.example.com/v1/bypass?key=YOUR_KEY&url=" .. Http:UrlEncode(LINK)\nlocal res = Http:JSONDecode(game:HttpGet(url))\n\nprint(res.key)', e)}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg>Copy</button>
-           <pre><span className="tk">local</span> Http = game:GetService(<span className="ts">"HttpService"</span>){`\n`}<span className="tk">local</span> url = <span className="ts">"https://api.example.com/v1/bypass?key=YOUR_KEY&url="</span> .. Http:UrlEncode(LINK){`\n`}<span className="tk">local</span> res = Http:JSONDecode(game:HttpGet(url)){`\n\n`}<span className="tk">print</span>(res.key)</pre>
+           <button className="copy" onClick={(e) => handleCopy('local Http = game:GetService("HttpService")\nlocal url = "https://bypass.panduhub.com/bypass?key=YOUR_KEY&url=" .. Http:UrlEncode(LINK)\nlocal res = Http:JSONDecode(game:HttpGet(url))\n\nprint(res.key)', e)}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg>Copy</button>
+           <pre><span className="tk">local</span> Http = game:GetService(<span className="ts">"HttpService"</span>){`\n`}<span className="tk">local</span> url = <span className="ts">"https://bypass.panduhub.com/bypass?key=YOUR_KEY&url="</span> .. Http:UrlEncode(LINK){`\n`}<span className="tk">local</span> res = Http:JSONDecode(game:HttpGet(url)){`\n\n`}<span className="tk">print</span>(res.key)</pre>
           </div>
          </div>
         </div>
